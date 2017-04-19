@@ -1,0 +1,27 @@
+<h1>Welcome to Organization</h1>
+  <h3>List of Sports teams</h3>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+      <% @teams.each do |team|%>
+        <tr>
+          <td><%= team.id %></td>
+          <td><%= link_to team.sport_name,"/sport/#{team.id}" %></td>
+        </tr>
+      <% end %>
+    </table>
+  <h3>Get to know our players</h3>
+  <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+      <% @members.each do |member|%>
+        <tr>
+          <td><%= member.id %></td>
+          <td><%= link_to member.first_name, "/profile/#{member.id}" %></td>
+        </tr>
+      <% end %>
+    </table>
