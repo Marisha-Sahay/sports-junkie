@@ -14,6 +14,10 @@ class PagesController < ApplicationController
 
   def profile
     @profile = Member.find_by(id: params[:id])
+    @teams = Team.all
   end
-  
+
+  def update
+  end
+
 end
