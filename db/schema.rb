@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419163055) do
+ActiveRecord::Schema.define(version: 20170420033417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,12 @@ ActiveRecord::Schema.define(version: 20170419163055) do
     t.string   "password_digest"
     t.string   "height"
     t.string   "weight"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "private"
+    t.date     "date_participation"
+    t.string   "sport_participation"
+    t.string   "duration_of_participation"
   end
 
   create_table "teams", force: :cascade do |t|

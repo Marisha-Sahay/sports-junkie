@@ -1,6 +1,3 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 html {
   position: relative;
   min-height: 100%;
@@ -8,6 +5,7 @@ html {
 body {
   margin: 0 0 100px; /* bottom = footer height */
 }
+// Footer styling
 footer {
   position: absolute;
   left: 0;
@@ -17,6 +15,14 @@ footer {
   background-color: #333;
   color: white;
 }
+.footer-container{
+  padding-top:20px;
+}
+.text-muted{
+  text-align: center;
+}
+
+// NAVBAR styling
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
@@ -44,4 +50,25 @@ footer {
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
+
+.profile-container {
+  padding-bottom: 50px;
+  padding-top:50px;
+  padding-left:50px;
+}
+.row{
+  padding-bottom:20px;
+}
+.profile-head{
+  // text-align: center;
+}
+.sport-name{
+  // text-align: center;
+  padding-top: 20px;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.profile-name{
+//   text-align: center;
 }

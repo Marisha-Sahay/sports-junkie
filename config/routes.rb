@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   get "/organization", to: 'pages#organization'
   get "/sport/:id", to: 'pages#sport_show'
   get "/profile/:id",to: 'pages#profile'
+  patch "/profile/:id", to: 'pages#update'
 end
