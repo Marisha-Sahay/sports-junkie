@@ -2,8 +2,8 @@
   <h1>Welcome to San Francisco sports academy</h1>
   <div class="row">
     <div class="col-md-6">
-      <h3 class="match-played-head">Total number of matches played</h3>
-      <%= pie_chart @member_team_aggs.group(:team_name).sum(:no_of_matches_played) %>
+      <h3 class="match-played-head">Total number of matches played in last 12 months</h3>
+      <%= column_chart @member_team_aggs.group(:team_name).sum(:no_of_matches_played) %>
     </div>
     <h3 class="sports-padding">Your sports teams</h3>
     <% @teams.each do |team|%>

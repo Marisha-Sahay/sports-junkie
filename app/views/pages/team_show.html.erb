@@ -11,12 +11,6 @@
       <%= line_chart @matches.group_by_month(:date_of_match, format: "%B, %Y").count, discrete: true %>
     </div>
   </div>
-  <div class="know-player-container">
-    <h3>Get to know your players</h3>
-    <% @team.members.each do |member| %>
-      <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
-    <% end %>
-  </div>
   <table class="table">
     <tr>
       <th>Opponent Name</th>
@@ -31,4 +25,10 @@
       </tr>
     <% end %>
   </table>
+  <div class="know-player-container">
+    <h3>Get to know your players</h3>
+    <% @team.members.each do |member| %>
+      <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
+    <% end %>
+  </div>
 </div>
