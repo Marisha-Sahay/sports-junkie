@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get "/", to: 'pages#home'
+  get "/", to: 'pages#organization'
   get "/organization", to: 'pages#organization'
-  get "/sport/:id", to: 'pages#sport_show'
-  get "/profile/:id",to: 'pages#profile'
-  patch "/profile/:id", to: 'pages#update'
+  get "/member/:id", to: 'pages#profile_show'
+  get "/team/:id", to: 'pages#team_show'
+  get "/myprofile/:id",to: 'pages#profile'
+  patch "/myprofile/:id", to: 'pages#update'
 end

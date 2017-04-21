@@ -29,12 +29,10 @@ ActiveRecord::Schema.define(version: 20170420033417) do
     t.string   "password_digest"
     t.string   "height"
     t.string   "weight"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.boolean  "private"
-    t.date     "date_participation"
-    t.string   "sport_participation"
-    t.string   "duration_of_participation"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.boolean  "privat"
+    t.date     "turned_pro"
   end
 
   create_table "teams", force: :cascade do |t|

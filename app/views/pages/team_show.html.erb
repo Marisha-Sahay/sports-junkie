@@ -1,0 +1,7 @@
+<div class="sport-show-container">
+  <h1> <%= image_tag("#{@team.sport_name}.png", class: "sport-image")%>  <%= @team.sport_name%> - San Francisco sport accademy</h1>
+  <h3>Get to know your players</h3>
+  <% @team.members.each do |member| %>
+    <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
+  <% end %>
+</div>

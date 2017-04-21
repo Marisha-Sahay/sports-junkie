@@ -4,6 +4,7 @@ html {
 }
 body {
   margin: 0 0 100px; /* bottom = footer height */
+  background-color: #DCDCDC;
 }
 // Footer styling
 footer {
@@ -71,4 +72,49 @@ footer {
 }
 .profile-name{
 //   text-align: center;
+}
+.sport-image{
+  content: icon;
+  border: 1px solid black;
+  width:30px;
+  height:30px;
+}
+.sport-name-property {
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+.sport-head{
+  padding-left: 30px;
+}
+.member-name {
+  padding-left: 30px;  
+}
+.organization-container{
+  padding-bottom: 50px;
+  padding-top:50px;
+  padding-left:50px;
+}
+
+///////////Profile show page - Consumer facing ////////////////////
+.profile-name{
+  text-align: center;
+  padding-top: 30px;
+  color: black;
+}
+.profile-show-container{
+  padding-left: 50px;
+  padding-right:50px;
+}
+.name-container{
+  // background-color: #3B5998;
+  height: 100px;
+  padding-bottom: 50px;
+}
+.start-column{
+  padding-left: 50px;
+}
+//////////////////////////////////////////////////////////////////
+// Sports show page
+.sport-show-container {
+  padding-left: 50px;
 }

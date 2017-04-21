@@ -7,17 +7,20 @@
         <h3>Sports <%= @profile.first_name%> is interested in - </h3>
       </div>
         <% @profile.teams.each do |team|%>
-        <div class="sport-name"><%= team.sport_name %></div>
+          <div class="sport-name-property">
+            <%= image_tag("#{team.sport_name}.png", class: "sport-image")%>
+            <%= team.sport_name %>
+          </div>
           <% team.members.each do |member| %>
             <% if member.id == @profile.id %>
             <% else %>
-              <li class="profile-name"><%= link_to member.first_name, "/profile/#{member.id}" %></li>
+              <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
             <% end %>
           <% end %>
       <% end %>
     </div>
   </div>
-  <%= form_tag "/profile/#{@profile.id}", method: :patch do%>
+  <%= form_tag "/myprofile/#{@profile.id}", method: :patch do%>
     <form class="form-horizontal">
       <div class="row">
         <div class="form-group">
@@ -62,48 +65,23 @@
       <div class="row">
         <div class="form-group">
           <div class="col-sm-5 inputs-group">
-            <%=label_tag :password %>
-            <%=password_field_tag :password,"", class:"form-control" %>
+            <p>Do you want to make your profile private? </p>
+            <div class="radio-inline">
+              <%=label_tag :Yes%>
+              <%=radio_button_tag :privat,true,class:"form-control" %>
+            </div>
+            <div class="radio-inline">
+              <%=label_tag :No%>
+              <%=radio_button_tag :privat,false,class:"form-control" %>
+            </div>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="form-group">
           <div class="col-sm-5 inputs-group">
-            <%=label_tag :password_confirmation %>
-            <%=password_field_tag :password_confirmation,"", class:"form-control"  %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <%= select_tag "sports",options_from_collection_for_select(@teams, "id", "sport_name"),multiple: true, prompt: 'Please select the sport you like: '%>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            Make private? <%= check_box_tag 'tos', 'yes', false, class: 'accept_tos'%>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <h3>Enter sports participation data: </h3>
-            <%=label_tag :Date %>
-            <%= date_field_tag :date, Date.today %></p>
-            Sport: <%= collection_select :team, :sport_name, Team.all, :id, :sport_name, multiple: true,:prompt => 'Select sport you participated'%>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-3 inputs-group">
-            <%= label_tag :Duration_of_participation%>
-            <%= text_field_tag :duration,"", class:"form-control"%>
+            <%=label_tag :started_playing %>
+            <%= date_field_tag :turned_pro, Date.today %>
           </div>
         </div>
       </div>

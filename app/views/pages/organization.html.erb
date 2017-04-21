@@ -1,27 +1,22 @@
-<h1>Welcome to Organization</h1>
-  <h3>List of Sports teams</h3>
-    <table>
-      <tr>
-        <th>Id</th>
-        <th>Name</th>
-      </tr>
-      <% @teams.each do |team|%>
-        <tr>
-          <td><%= team.id %></td>
-          <td><%= link_to team.sport_name,"/sport/#{team.id}" %></td>
-        </tr>
-      <% end %>
-    </table>
-  <h3>Get to know our players</h3>
+<div class="organization-container" >
+  <h1>Welcome to San Francisco sports academy</h1>
+  <h3>Your sports teams</h3>
   <table>
+    <% @teams.each do |team|%>
       <tr>
-        <th>Id</th>
-        <th>Name</th>
+        <td class="sport-name-property">
+          <%= image_tag("#{team.sport_name}.png", class: "sport-image")%>
+          <%= link_to team.sport_name, "/team/#{team.id}"%>
+        </td>
       </tr>
-      <% @members.each do |member|%>
-        <tr>
-          <td><%= member.id %></td>
-          <td><%= link_to member.first_name, "/profile/#{member.id}" %></td>
-        </tr>
-      <% end %>
-    </table>
+    <% end %>
+  </table>
+  <h3>Your favourite players</h3>
+  <table>
+    <% @members.each do |member|%>
+      <tr>
+        <td class="member-name"><%= link_to member.first_name, "/member/#{member.id}" %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

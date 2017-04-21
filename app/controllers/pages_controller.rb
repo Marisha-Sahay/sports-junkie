@@ -1,15 +1,16 @@
 class PagesController < ApplicationController
   
-  def home
-  end
-
   def organization
     @teams = Team.all
     @members = Member.all
   end
   
-  def sport_show
-    @sport = Team.find_by(id: params[:id])
+  def team_show
+    @team = Team.find_by(id: params[:id])
+  end
+
+  def profile_show
+    @profile = Member.find_by(id: params[:id])
   end
 
   def profile
@@ -18,6 +19,20 @@ class PagesController < ApplicationController
   end
 
   def update
+    user = Member.find_by(id: params[:id])
+    user.first_name = params[:first_name]
+    user.last_name = params[:last_name]
+    user.email = params[:email]
+    user.height = params[:height]
+    user.weight = params[:weight]
+    user.privat = params[:privat]
+    user.turned_pro = params[:turned_pro]
+    # binding.pry
+    if user.save
+      redirect_to "/member/#{user.id}"
+    else
+    render :profile
+    end
   end
 
 end
