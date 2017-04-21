@@ -2,10 +2,12 @@
 <html>
   <head>
     <title>SportsJunkie</title>
+    <%= stylesheet_link_tag 'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
+    <%= javascript_include_tag "http://www.google.com/jsapi", "chartkick" %>
+    <%= stylesheet_link_tag 'http://yandex.st/bootstrap/3.1.1/css/bootstrap.min.css' %>
+    <%= javascript_include_tag 'http://yandex.st/bootstrap/3.1.1/js/bootstrap.min.js' %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -17,7 +19,7 @@
     <%= yield %>
     <footer class="footer">
       <div class="footer-container">
-        <p class="text-muted">US sports Accademy.</p>
+        <p class="text-muted">San Francisco sports accademy</p>
         <p class="text-muted">Copyright @<%=Time.now.year%></p>
       </div>
     </footer>

@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20170421032753) do
   create_table "matches", force: :cascade do |t|
     t.integer  "team_id"
     t.date     "date_of_match"
-    t.boolean  "won"
+    t.string   "won"
     t.string   "opponent"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170421032753) do
 
   create_table "member_team_aggs", force: :cascade do |t|
     t.integer  "team_id"
+    t.string   "team_name"
     t.integer  "member_id"
     t.date     "last_match_played"
     t.date     "first_match_played"
@@ -45,11 +46,10 @@ ActiveRecord::Schema.define(version: 20170421032753) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
-    t.string   "password_digest"
     t.string   "height"
     t.string   "weight"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.boolean  "privat"
     t.date     "turned_pro"
   end

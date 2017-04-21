@@ -1,21 +1,22 @@
 <div class="sport-show-container">
-  <h1> <%= image_tag("#{@team.sport_name}.png", class: "sport-image")%>  <%= @team.sport_name%> - San Francisco sport accademy</h1>
-  <h3>Get to know your players</h3>
-  <% @team.members.each do |member| %>
-    <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
-  <% end %>
-  <table class="table">
-    <tr>
-      <th>Date</th>
-      <th># of matches</th>
-    </tr>
-    <% @matches_count.each do |count| %>
-      <tr>
-        <td><%= count['to_char'] %></td>
-        <td><%= count['count'] %></td>
-      </tr>
+  <h1 class="sport-head"> <%= image_tag("#{@team.sport_name}.png", class: "sport-image")%>  <%= @team.sport_name%> - San Francisco sport accademy</h1>
+  <div class="row">
+    <div class="col-xs-6">
+      <h3>Win/Loss ratio in last 12 months:</h3>
+      <%= pie_chart @matches.group(:won).count %>
+    </div>
+    <!-- Line Chart - Single Series -->
+    <div class="col-xs-6">
+      <h3><%= @team.sport_name%>: Number of matches played</h3>
+      <%= line_chart @matches.group_by_month(:date_of_match, format: "%B, %Y").count, discrete: true %>
+    </div>
+  </div>
+  <div class="know-player-container">
+    <h3>Get to know your players</h3>
+    <% @team.members.each do |member| %>
+      <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
     <% end %>
-  </table>
+  </div>
   <table class="table">
     <tr>
       <th>Opponent Name</th>

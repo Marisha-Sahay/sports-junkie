@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.2'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'pry'
+gem 'chartkick', '~> 1.2.4'
+gem 'groupdate'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

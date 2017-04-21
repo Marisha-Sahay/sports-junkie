@@ -1,93 +1,90 @@
 <div class="profile-container">
-  <div class="row">
-    <div class="col-md-2"></div>
     <div class="profile-details">
-      <div class="profile-head">
-        <h1><%= @profile.first_name%>'s Profile</h1>
-        <h3>Sports <%= @profile.first_name%> is interested in - </h3>
+      <h1><%= @profile.first_name%>'s Profile</h1>
+      <h3>Sports <%= @profile.first_name%> is interested in - </h3>
+      <% @profile.teams.each do |team|%>
+      <div class="sport-detail-container">
+      <div class="sport-name-property">
+        <%= image_tag("#{team.sport_name}.png", class: "sport-image")%>
+        <%= team.sport_name %>
       </div>
-        <% @profile.teams.each do |team|%>
-          <div class="sport-name-property">
-            <%= image_tag("#{team.sport_name}.png", class: "sport-image")%>
-            <%= team.sport_name %>
-          </div>
-          <% team.members.each do |member| %>
-            <% if member.id == @profile.id %>
-            <% else %>
-              <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
-            <% end %>
-          <% end %>
+      <% team.members.each do |member| %>
+      <% if member.id == @profile.id %>
+      <% else %>
+      <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
+      <% end %>
+      <% end %>
+      </div>
       <% end %>
     </div>
-  </div>
   <%= form_tag "/myprofile/#{@profile.id}", method: :patch do%>
-    <form class="form-horizontal">
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <%=label_tag :first_name %>
-            <%=text_field_tag :first_name,@profile.first_name, class:"form-control" %>
+  <form class="form-horizontal">
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-5 inputs-group">
+          <%=label_tag :first_name %>
+          <%=text_field_tag :first_name,@profile.first_name, class:"form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-5 inputs-group">
+          <%=label_tag :last_name %>
+          <%=text_field_tag :last_name,@profile.last_name, class:"form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-5 inputs-group">
+          <%=label_tag :Height %>
+          <%=text_field_tag :height,@profile.height, class:"form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-5 inputs-group">
+          <%=label_tag :weight %>
+          <%=text_field_tag :weight,@profile.weight, class:"form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-5 inputs-group">
+          <%=label_tag :email %>
+          <%=text_field_tag :email,@profile.email, class:"form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-5 inputs-group">
+          <p>Do you want to make your profile private? </p>
+          <div class="radio-inline">
+            <%=label_tag :Yes%>
+            <%=radio_button_tag :privat,true,class:"form-control" %>
+          </div>
+          <div class="radio-inline">
+            <%=label_tag :No%>
+            <%=radio_button_tag :privat,false,class:"form-control" %>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <%=label_tag :last_name %>
-            <%=text_field_tag :last_name,@profile.last_name, class:"form-control" %>
-          </div>
+    </div>
+    <div class="row">
+      <div class="form-group">
+        <div class="col-sm-5 inputs-group">
+          <%=label_tag :started_playing %>
+          <%= date_field_tag :turned_pro, Date.today %>
         </div>
       </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <%=label_tag :Height %>
-            <%=text_field_tag :height,@profile.height, class:"form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <%=label_tag :weight %>
-            <%=text_field_tag :weight,@profile.weight, class:"form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <%=label_tag :email %>
-            <%=text_field_tag :email,@profile.email, class:"form-control" %>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <p>Do you want to make your profile private? </p>
-            <div class="radio-inline">
-              <%=label_tag :Yes%>
-              <%=radio_button_tag :privat,true,class:"form-control" %>
-            </div>
-            <div class="radio-inline">
-              <%=label_tag :No%>
-              <%=radio_button_tag :privat,false,class:"form-control" %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="form-group">
-          <div class="col-sm-5 inputs-group">
-            <%=label_tag :started_playing %>
-            <%= date_field_tag :turned_pro, Date.today %>
-          </div>
-        </div>
-      </div>
-      <div class="button">
-        <%= button_tag "<span> Update Your Account</span>".html_safe, class: "btn primary-btn"%>
-      </div>
-    </form>
+    </div>
+    <div class="button">
+      <%= button_tag "<span> Update Your Account</span>".html_safe, class: "btn primary-btn"%>
+    </div>
+  </form>
   <%end%>
 </div>

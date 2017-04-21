@@ -4,7 +4,6 @@ html {
 }
 body {
   margin: 0 0 100px; /* bottom = footer height */
-  background-color: #DCDCDC;
 }
 // Footer styling
 footer {
@@ -54,16 +53,14 @@ footer {
 }
 
 .profile-container {
-  padding-bottom: 50px;
+  padding-bottom: 200px;
   padding-top:50px;
   padding-left:50px;
 }
 .row{
   padding-bottom:20px;
 }
-.profile-head{
-  // text-align: center;
-}
+
 .sport-name{
   // text-align: center;
   padding-top: 20px;
@@ -90,7 +87,7 @@ footer {
   padding-left: 30px;  
 }
 .organization-container{
-  padding-bottom: 50px;
+  padding-bottom: 150px;
   padding-top:50px;
   padding-left:50px;
 }
@@ -104,6 +101,7 @@ footer {
 .profile-show-container{
   padding-left: 50px;
   padding-right:50px;
+  padding-bottom: 200px;
 }
 .name-container{
   // background-color: #3B5998;
@@ -117,4 +115,25 @@ footer {
 // Sports show page
 .sport-show-container {
   padding-left: 50px;
+  padding-bottom: 200px;
+  padding-top: 20px;
+}
+.chart-container {
+  align: center;
+  padding-bottom: 20px;
+}
+.sport-head{
+  padding-bottom: 20px;
+  text-align: center;
+}
+.know-player-container{
+  padding-bottom: 30px;
+  text-align: justify;
+}
+.org-sport-container {
+  padding-bottom: 20px;
+}
+.sport-detail-container{
+  padding-bottom: 20px;
+  padding-top: 10px;
 }
