@@ -4,4 +4,30 @@
   <% @team.members.each do |member| %>
     <li><%= link_to member.first_name, "/member/#{member.id}" %></li>
   <% end %>
+  <table class="table">
+    <tr>
+      <th>Date</th>
+      <th># of matches</th>
+    </tr>
+    <% @matches_count.each do |count| %>
+      <tr>
+        <td><%= count['to_char'] %></td>
+        <td><%= count['count'] %></td>
+      </tr>
+    <% end %>
+  </table>
+  <table class="table">
+    <tr>
+      <th>Opponent Name</th>
+      <th>Win/Loss record</th>
+      <th># of matches</th>
+    </tr>
+    <% @won_data.each do |data| %>
+      <tr>
+        <td><%= data['opponent'] %></td>
+        <td><%= data['won'] %></td>
+        <td><%= data['count'] %></td>
+      </tr>
+    <% end %>
+  </table>
 </div>

@@ -31,3 +31,59 @@ InterestedSport.create!([
   {team_id:4 ,member_id:5},
   {team_id:5 ,member_id:5},
   ])
+#Data for member and team aggregate
+MemberTeamAgg.create!([
+  {team_id:1, member_id:1, last_match_played:"2017-01-20", first_match_played:"2015-03-11", no_of_matches_played:5}, 
+  {team_id:2, member_id:1, last_match_played:"2017-02-20", first_match_played:"2015-03-11", no_of_matches_played:6}, 
+  {team_id:3, member_id:1, last_match_played:"2017-03-20", first_match_played:"2015-03-11", no_of_matches_played:4}, 
+  {team_id:4, member_id:1, last_match_played:"2017-04-20", first_match_played:"2016-03-11", no_of_matches_played:3}, 
+  {team_id:1, member_id:2, last_match_played:"2017-03-10", first_match_played:"2016-03-11", no_of_matches_played:3}, 
+  {team_id:4, member_id:2, last_match_played:"2017-03-11", first_match_played:"2016-03-11", no_of_matches_played:7}, 
+  {team_id:1, member_id:3, last_match_played:"2017-02-11", first_match_played:"2016-03-11", no_of_matches_played:7}, 
+  {team_id:2, member_id:3, last_match_played:"2017-01-11", first_match_played:"2016-03-11", no_of_matches_played:1}, 
+  {team_id:3, member_id:4, last_match_played:"2017-03-11", first_match_played:"2016-03-11", no_of_matches_played:9}, 
+  {team_id:1, member_id:5, last_match_played:"2017-03-11", first_match_played:"2016-03-11", no_of_matches_played:1}, 
+  {team_id:2, member_id:5, last_match_played:"2017-03-11", first_match_played:"2016-03-11", no_of_matches_played:2}, 
+  {team_id:4, member_id:5, last_match_played:"2017-03-11", first_match_played:"2016-03-11", no_of_matches_played:3}, 
+  {team_id:5, member_id:5, last_match_played:"2017-03-11", first_match_played:"2016-03-11", no_of_matches_played:4}
+  ])
+
+#
+Match.create!([
+  {team_id: 1, date_of_match: "2017-01-20", won: true , opponent: "Oakland sports"},
+  {team_id: 1, date_of_match: "2016-12-20", won: false , opponent: "Palo Alto sports"},
+  {team_id: 1, date_of_match: "2017-01-01", won: true , opponent: "San Mateo sports"},
+  {team_id: 1, date_of_match: "2016-10-20", won: true , opponent: "Oakland sports"},
+  {team_id: 2, date_of_match: "2017-01-20", won: false , opponent: "San Jose sports"},
+  {team_id: 2, date_of_match: "2016-12-20", won: true , opponent: "San Jose sports"},
+  {team_id: 2, date_of_match: "2017-01-01", won: false , opponent: "Santa Clara sports"},
+  {team_id: 2, date_of_match: "2016-10-20", won: true , opponent: "San Jose sports"},
+  {team_id: 3, date_of_match: "2017-01-20", won: true , opponent: "Oakland sports"},
+  {team_id: 3, date_of_match: "2016-12-20", won: false , opponent: "Palo Alto sports"},
+  {team_id: 3, date_of_match: "2017-01-01", won: true , opponent: "San Mateo sports"},
+  {team_id: 3, date_of_match: "2016-10-20", won: true , opponent: "Oakland sports"},
+  {team_id: 3, date_of_match: "2017-01-20", won: false , opponent: "San Jose sports"},
+  {team_id: 3, date_of_match: "2016-12-20", won: true , opponent: "San Jose sports"},
+  {team_id: 3, date_of_match: "2017-01-01", won: false , opponent: "Santa Clara sports"},
+  {team_id: 3, date_of_match: "2016-10-20", won: true , opponent: "San Jose sports"},
+  {team_id: 4, date_of_match: "2017-01-20", won: true , opponent: "Oakland sports"},
+  {team_id: 4, date_of_match: "2016-12-20", won: false , opponent: "Palo Alto sports"},
+  {team_id: 4, date_of_match: "2017-01-01", won: true , opponent: "San Mateo sports"},
+  {team_id: 4, date_of_match: "2016-10-20", won: true , opponent: "Oakland sports"},
+  {team_id: 4, date_of_match: "2017-01-20", won: false , opponent: "San Jose sports"},
+  {team_id: 4, date_of_match: "2016-12-20", won: true , opponent: "San Jose sports"},
+  {team_id: 4, date_of_match: "2017-01-01", won: false , opponent: "Santa Clara sports"},
+  {team_id: 4, date_of_match: "2016-10-20", won: true , opponent: "San Jose sports"},
+  {team_id: 5, date_of_match: "2016-10-20", won: true , opponent: "Oakland sports"},
+  {team_id: 5, date_of_match: "2017-01-20", won: false , opponent: "San Jose sports"},
+  {team_id: 5, date_of_match: "2016-12-20", won: true , opponent: "San Jose sports"},
+  {team_id: 5, date_of_match: "2017-01-01", won: false , opponent: "Santa Clara sports"},
+  {team_id: 5, date_of_match: "2016-10-20", won: true , opponent: "San Jose sports"},
+  {team_id: 5, date_of_match: "2017-01-20", won: true , opponent: "Oakland sports"},
+  {team_id: 5, date_of_match: "2016-12-20", won: false , opponent: "Palo Alto sports"},
+  {team_id: 5, date_of_match: "2017-01-01", won: true , opponent: "San Mateo sports"},
+  {team_id: 5, date_of_match: "2016-10-20", won: true , opponent: "Oakland sports"},
+])
+
+
+

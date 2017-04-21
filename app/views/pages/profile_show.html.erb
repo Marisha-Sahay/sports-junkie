@@ -19,6 +19,7 @@
             <th>Weight</th>
             <th>Email</th>
             <th>Turned Pro</th>
+            <th>Last match played</th>
             <th>Sports Played</th>
           </tr>
           <tr>
@@ -26,6 +27,7 @@
             <td><%= @profile.weight %></td>
             <td><%= @profile.email %></td>
             <td><%= @profile.turned_pro %></td>
+            <td><%= %></td>
             <td>
               <%  @profile.teams.each do |team| %>
                   <%= image_tag("#{team.sport_name}.png", class: "sport-image")%>

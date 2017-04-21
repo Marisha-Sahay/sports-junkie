@@ -7,6 +7,8 @@ class PagesController < ApplicationController
   
   def team_show
     @team = Team.find_by(id: params[:id])
+    @matches_count = execute_statement("select to_char(date_of_match, 'YYYY-MM'), count(id) from matches where team_id = #{@team.id} group by 1 order by 1")
+    @won_data = execute_statement("select opponent, won, count(id) from matches where team_id = #{@team.id} group by 1,2")
   end
 
   def profile_show
