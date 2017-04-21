@@ -6,7 +6,7 @@
       <div class="sport-detail-container">
       <div class="sport-name-property">
         <%= image_tag("#{team.sport_name}.png", class: "sport-image")%>
-        <%= team.sport_name %>
+        <%= link_to team.sport_name, "/team/#{team.id}" %>
       </div>
       <% team.members.each do |member| %>
       <% if member.id == @profile.id %>
